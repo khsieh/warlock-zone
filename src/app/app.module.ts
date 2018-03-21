@@ -12,10 +12,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { PostComponent } from './components/post/post.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 //services
 import { LoginService } from './services/login/login.service';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
 
 
 @NgModule({

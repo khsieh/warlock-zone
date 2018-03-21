@@ -23,38 +23,10 @@ export class LoginComponent implements OnInit {
     
     validate():void {
         console.log('validating user: ' + this.login_username);
-        // this.loginService.validateUser(this.fusername,this.fpassword).subscribe(
-        //     resp=>{
-        //         // console.log(resp);
-        //         let respJson = JSON.parse(resp.body);
-                
-        //         sessionStorage.setItem("uid", respJson.uid);
-        //         sessionStorage.setItem("firstname", respJson.firstname);
-        //         sessionStorage.setItem("lastname", respJson.lastname);
-        //         sessionStorage.setItem("username", respJson.username);
-        //         sessionStorage.setItem("password", respJson.password);
-        //         sessionStorage.setItem("email",respJson.email);
-        //         sessionStorage.setItem("rid", respJson.rid);
-                
-        //         console.log(sessionStorage.getItem("uid"));
+    }
 
-        //         // console.log(s);
-        //         console.log(resp.status);
-        //         if(resp.status == 211){
-        //             console.log("This is a Employee");
-        //             this.router.navigate(['ehome']);
-        //         }
-        //         else if (resp.status == 212){
-        //             console.log("This is a manager");
-        //             this.router.navigate(['mhome']);
-        //         }
-        //     },
-        //     err=>{
-        //         //show alert??
-                
-        //         console.log(err.status);
-        //     }
-        // );
+    register():void{
+        console.log("Registering user!");
     }
 
 }
