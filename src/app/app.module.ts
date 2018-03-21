@@ -12,10 +12,13 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { PostComponent } from './components/post/post.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HomeComponent } from './components/home/home.component';
 
 //services
 import { LoginService } from './services/login/login.service';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+
 
 
 
@@ -28,7 +31,9 @@ import { LoginService } from './services/login/login.service';
     LogoutComponent,
     FeedComponent,
     PostComponent,
-    NavBarComponent
+    HomeComponent,
+    ErrorPageComponent,
+    EditProfileComponent
   ],
   //modules, mostly from ng core
   imports: [

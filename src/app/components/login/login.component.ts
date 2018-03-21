@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     
     validate():void {
         console.log('validating user: ' + this.login_username);
+        this.router.navigate(['home']);
     }
 
     register():void{
