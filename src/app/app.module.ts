@@ -2,12 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-=======
 import { HttpModule } from '@angular/http';
->>>>>>> 1ab0f95b34585bfd0af65e25d223e83ac6f66c30
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 
 //components
@@ -45,6 +43,7 @@ import { PostsService } from './services/posts/posts.service';
     BrowserAnimationsModule,
     NgbModule.forRoot(),
     HttpModule,
+    HttpClientModule,
     //separated routing
     AppRoutingModule
   ],
