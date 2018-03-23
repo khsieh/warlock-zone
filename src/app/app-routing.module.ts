@@ -4,11 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 const routes: Routes = [
     // {path:'home',component:HomeComponent,canActivate:["guard-name"]},
     {path:'login',component:LoginComponent},
-    {path:'home',component:HomeComponent}
+    {path:'',component:LoginComponent},
+    {path:'home',component:HomeComponent},
+    {path:'editProfile',component:EditProfileComponent},
     {path:'**', component:ErrorPageComponent} //change this to a 404 error page
 ];
 
