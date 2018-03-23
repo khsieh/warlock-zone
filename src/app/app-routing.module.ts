@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { FeedComponent } from './components/feed/feed.component';
 
 const routes: Routes = [
     // {path:'home',component:HomeComponent,canActivate:["guard-name"]},

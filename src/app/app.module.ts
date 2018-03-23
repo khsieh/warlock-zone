@@ -2,8 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+=======
+import { HttpModule } from '@angular/http';
+>>>>>>> 1ab0f95b34585bfd0af65e25d223e83ac6f66c30
 import { AppRoutingModule } from './app-routing.module';
 
 //components
@@ -19,10 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginService } from './services/login/login.service';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-
-
-
-
+import { PostsService } from './services/posts/posts.service';
 
 @NgModule({
   //components
@@ -42,13 +43,18 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
     NgbModule.forRoot(),
+=======
+    HttpModule,
+>>>>>>> 1ab0f95b34585bfd0af65e25d223e83ac6f66c30
     //separated routing
     AppRoutingModule
   ],
   //services, helper methods to handle connectivity to back end
   providers: [
-    LoginService
+    LoginService,
+    PostsService
   ],
   bootstrap: [AppComponent]
 })
