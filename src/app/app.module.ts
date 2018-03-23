@@ -43,11 +43,8 @@ import { PostsService } from './services/posts/posts.service';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
     NgbModule.forRoot(),
-=======
     HttpModule,
->>>>>>> 1ab0f95b34585bfd0af65e25d223e83ac6f66c30
     //separated routing
     AppRoutingModule
   ],
