@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 //components
@@ -16,7 +16,7 @@ import { PostComponent } from './components/post/post.component';
 //services
 import { LoginService } from './services/login/login.service';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-
+import { PostsService } from './services/posts/posts.service';
 
 @NgModule({
   //components
@@ -34,12 +34,14 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpModule,
     //separated routing
     AppRoutingModule
   ],
   //services, helper methods to handle connectivity to back end
   providers: [
-    LoginService
+    LoginService,
+    PostsService
   ],
   bootstrap: [AppComponent]
 })
