@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +23,8 @@ import { LoginService } from './services/login/login.service';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { PostsService } from './services/posts/posts.service';
+import { ToggleNewPostService } from './services/util/toggle-new-post.service';
+
 
 @NgModule({
   //components
@@ -40,6 +43,7 @@ import { PostsService } from './services/posts/posts.service';
   imports: [
     BrowserModule,
     FormsModule,
+    CommonModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
     HttpModule,
@@ -50,7 +54,8 @@ import { PostsService } from './services/posts/posts.service';
   //services, helper methods to handle connectivity to back end
   providers: [
     LoginService,
-    PostsService
+    PostsService,
+    ToggleNewPostService
   ],
   bootstrap: [AppComponent]
 })

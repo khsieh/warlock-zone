@@ -2,19 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { FeedComponent } from '../feed/feed.component';
+import { ToggleNewPostService } from '../../services/util/toggle-new-post.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  providers: [FeedComponent]
 })
 export class ProfileComponent implements OnInit {
 
-    //change to user
-    //use user.first + user.last
-    // name: string = 'Cousin Seth';
-
-    constructor(private router:Router, private editModal:NgbModal) { }
+    private viewPost = false;
+    constructor(
+        private router:Router, 
+        private editModal:NgbModal, 
+        private feed:FeedComponent,
+        private tService:ToggleNewPostService
+    ) { }
 
     ngOnInit() {
     }
@@ -24,4 +29,8 @@ export class ProfileComponent implements OnInit {
 
     }
 
+    newPostControl(){
+        this.viewPost = !this.viewPost;
+        this.tService.changeDisplay(this.viewPost);
+    }
 }

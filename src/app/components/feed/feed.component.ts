@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../../models/post';
 import { PostsService } from '../../services/posts/posts.service';
 import { User } from '../../models/user';
-import { ProfileComponent } from '../profile/profile.component';
+import { ToggleNewPostService } from '../../services/util/toggle-new-post.service';
 
 @Component({
   selector: 'app-feed',
@@ -18,11 +18,11 @@ export class FeedComponent implements OnInit {
 
   private unsubmittedContent: string;
 
-  constructor(private posts:PostsService) {} //, private userComp:ProfileComponent) { }
+  constructor(private posts:PostsService,private toggleService:ToggleNewPostService) {} //, private userComp:ProfileComponent) { }
 
   ngOnInit() {
     this.maxposts = 10;
-    this.showCommentEntry = false;
+    // this.showCommentEntry = showCommentary;
     this.unsubmittedContent = "";
     // this.currentUser = this.userComp.$user;
     this.currentUser = new User();
@@ -31,11 +31,33 @@ export class FeedComponent implements OnInit {
     // Call service to get Posts from DB
     this.getPostsFromService();
 
+    this.toggleService.curStateAsObserable.subscribe(
+        resp=>{
+            this.showCommentEntry = resp;
+            console.log(resp);
+        },
+        err=>{
+            console.log(err);
+        }
+    );
   }
 
-  unhidePost(){
-    this.showCommentEntry = !this.showCommentEntry;
-  }
+//   public unhidePost(){
+//     console.log("called in feed");
+//     // console.log(this.showCommentEntry);
+//     this.toggleService.curStateAsObserable.subscribe(
+//         resp=>{
+//             this.showCommentEntry = resp;
+//             console.log(resp);
+//         },
+//         err=>{
+//             console.log(err);
+//         }
+//     );
+    // this.showCommentEntry = this.toggleService.curStateAsObserable;
+    // this.showCommentEntry = !this.showCommentEntry;
+//     console.log(this.showCommentEntry);
+//   }
 
   createPost(){
 

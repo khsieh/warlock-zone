@@ -23,10 +23,20 @@ export class LoginComponent implements OnInit {
     
     validate():void {
         console.log('validating user: ' + this.login_username);
-        this.router.navigate(['home']);
+        this.loginService.validate(this.login_username,this.login_password).subscribe(
+            resp=>{
+                console.log(resp);
+                // console.log(resp.status);
+            },
+            err=>{
+                console.log(err);
+            }
+        );
+        // this.router.navigate(['home']);
     }
 
     register():void{
+        
         console.log("Registering user!");
     }
 
