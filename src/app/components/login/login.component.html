@@ -13,8 +13,8 @@
                     <input [(ngModel)]="login_password" name="login_password" type="password" class="form-control" id="password" placeholder="password">
                 </div>
                 <div class="text-center">
-                    <button (click)="validate()" type="submit" class="btn btn-primary glyphicon glyphicon-log-in"> Login </button>
-                    <button (click)="register()" type="submit" class="btn btn-primary glyphicon glyphicon-user"> Register </button>
+                    <button id="login" (click)="validate()" type="submit" class="btn btn-primary glyphicon glyphicon-log-in"> Login </button>
+                    <button id="register" (click)="register()" type="button" class="btn btn-primary glyphicon glyphicon-user"> Register </button>
                 </div>
             </form>
         </div>

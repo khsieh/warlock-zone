@@ -17,6 +17,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { PostComponent } from './components/post/post.component';
 import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
 
 //services
 import { LoginService } from './services/login/login.service';
@@ -24,6 +25,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { PostsService } from './services/posts/posts.service';
 import { ToggleNewPostService } from './services/util/toggle-new-post.service';
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { ToggleNewPostService } from './services/util/toggle-new-post.service';
     PostComponent,
     HomeComponent,
     ErrorPageComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    RegisterComponent
   ],
   //modules, mostly from ng core
   imports: [

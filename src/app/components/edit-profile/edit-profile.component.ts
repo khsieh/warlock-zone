@@ -14,7 +14,7 @@ export class EditProfileComponent implements OnInit {
   new_password1: string;
   new_password2: string;
 
-  constructor(public activeModal: NgbActiveModal)//, private editUser:User) 
+  constructor(public activeModal: NgbActiveModal)
   { }
 
   ngOnInit() {
@@ -23,7 +23,6 @@ export class EditProfileComponent implements OnInit {
       this.editUser.$firstName = "Matt";
       this.editUser.$lastName = "Warlock";
       this.editUser.$email = "warlock@zone.org";
-    //   this.editUser.$password = "you're not allow to have this";
       this.editUser.$username = "warloccZ0ne";
   }
   updateUser():void{
