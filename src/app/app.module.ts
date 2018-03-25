@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 //components
@@ -35,6 +36,7 @@ import { PostsService } from './services/posts/posts.service';
     FormsModule,
     BrowserAnimationsModule,
     HttpModule,
+    HttpClientModule,
     //separated routing
     AppRoutingModule
   ],

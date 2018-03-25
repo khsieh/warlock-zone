@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="row">
+<!-- <div class="container">
+  <div class="row"> -->
       
     <!-- remove this -->
-      <!--<div id="profile" name="profile" class="col-md-3" style ='background-color: #2ba6cb;'><p align="center">Oh you know</p></div>-->
+      <!-- <div id="profile" name="profile" class="col-md-3" style ='background-color: #2ba6cb;'><p align="center">Oh you know</p></div> -->
           <!-- remove this -->
 
       
@@ -55,7 +55,7 @@
                   <div class="col-md-11">
                   <div class="panel panel-default">
                   <div class="panel-heading">
-                  <strong>{{post.$author.$username}}</strong> <span class="text-muted">commented 5 days ago</span>
+                  <strong>{{post.$author.username}}</strong> <span class="text-muted">commented 5 days ago</span>
                   </div>
                   <div class="panel-body"> {{post.$content}} </div><!-- /panel-body -->
                 </div><!-- /panel panel-default -->
@@ -65,7 +65,25 @@
         </ol>
         
         <!-- End of comment block -->
-
+        <div align="center" style="padding-bottom: 25px">
+          <div class="col-md-1">
+            <p>Most Recent</p>
+            <a href="" style="padding-right: 10px"><<</a>
+          </div>
+          <div class="col-md-1">
+              <p>Next 10</p>
+            <a href="" style="padding-right: 10px"><</a>
+          </div>
+          <div class="col-md-1">
+            <p>Previous 10</p>
+            <a href="" style="padding-right: 10px">></a>
+          </div>
+          <div class="col-md-1">
+            <p>Oldest Posts</p>
+            <a href="" style="padding-right: 10px">>></a>
+          </div>
+          
+        </div>
       </div>
-  </div>
-</div> <!--/container -->
+  <!-- </div>
+</div> /container -->

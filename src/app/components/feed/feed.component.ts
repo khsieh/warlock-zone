@@ -14,7 +14,7 @@ export class FeedComponent implements OnInit {
   private postList:Post[] = [];
   private maxposts: number;
   private currentUser: User;
-  private showCommentEntry: Boolean;
+  private showCommentEntry: Boolean; //show/hide user input "comment"
 
   private unsubmittedContent: string;
 
@@ -33,6 +33,7 @@ export class FeedComponent implements OnInit {
 
   }
 
+  //hide/unhide hidden comment section
   unhidePost(){
     this.showCommentEntry = !this.showCommentEntry;
   }
@@ -53,29 +54,60 @@ export class FeedComponent implements OnInit {
       this.showCommentEntry = false;
   }
 
-  getPostsFromService(){
+  // getPostsFromNewService(){
     //have to subscribe to getPosts() because it returns an observable (at least for now)
-    this.posts.getPosts().subscribe((allPost) => {
-      console.log("Fetching new posts for feed");
-      //TODO: should become something like this
-      //--have to return a list of posts to be sure--
-      //allPost.forEach((post, index) => {
-        // this.postList.push(post);
-      //});
+    // let response = this.posts.getPosts().subscribe((allPost) => {
+    // response = JSON.parse(response);  
+    // console.log("Fetching new posts for feed");
+    //   //TODO: should become something like this
+    //   //--have to return a list of posts to be sure--
+    //   //allPost.forEach((post, index) => {
+    //     // this.postList.push(post);
+    //   //});
       
-        for(var index = 0; index < this.maxposts; index++){
-          let newPost = new Post();
-          let getUserFromProfile = new User();
-          // console.log("index: "+index)
-          getUserFromProfile.$userID = allPost[index].userId;
-          getUserFromProfile.$username = "Big Bang Gabe";
-          newPost.$author = getUserFromProfile;
-          newPost.$content = allPost[index].body;
-          newPost.$postID = allPost[index].id;
-          this.postList.push(newPost);
-        }
-      });
+    //     for(var index = 0; index < this.maxposts; index++){
+    //       let newPost = new Post();
+    //       let getUserFromProfile = new User();
+    //       // console.log("index: "+index)
+    //       getUserFromProfile.$userID = allPost[index].userId;
+    //       getUserFromProfile.$username = "Big Bang Gabe";
+    //       newPost.$author = getUserFromProfile;
+    //       newPost.$content = allPost[index].body;
+    //       newPost.$postID = allPost[index].id;
+    //       this.postList.push(newPost);
+    //     }
+    //   });
+    //   console.log("kevins getPosts");
+    //   this.getPostsFromNewService();
 
-    };
+    // };
+
+    getPostsFromService(){
+      this.posts.getPosts().subscribe(
+        resp=>{
+          let list = JSON.parse(resp.body);
+          console.log(list[0].user.username);
+          for (var index = 0; index<list.length;index++){
+
+            let newPost = new Post();
+            newPost.$author = list[index].user;
+            newPost.$content = list[index].message;
+            newPost.$postID = list[index].postId;
+            // newPost.$image = list[index].image;
+            // newPost.$time = list[index].time;
+            console.log(newPost.$author.username);
+            this.postList.push(newPost);
+          }
+
+
+
+          console.log("Response: "+JSON.stringify(list[0]));
+          console.log("userID: "+list[0].user.userID);
+        },
+        err=>{
+          console.log("error");
+        }
+      );
+    }
 }
 

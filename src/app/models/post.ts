@@ -70,5 +70,9 @@ export class Post {
 	public set $picture(value: Blob) {
 		this.picture = value;
 	}
-    
+	
+	public getJSON(): string {
+		return JSON.stringify(this);
+	}
+
 }
