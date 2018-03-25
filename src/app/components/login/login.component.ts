@@ -30,10 +30,11 @@ export class LoginComponent implements OnInit {
         console.log('validating user: ' + this.login_username);
         this.loginService.validate(this.login_username,this.login_password).subscribe(
             resp=>{
-                console.log(resp);
+                let respJSON = JSON.parse(resp.body);
+                console.log(resp.status);
             },
             err=>{
-                console.log(err);
+                console.log(err.status);
             }
         );
     }
