@@ -11,12 +11,12 @@ import { ToggleNewPostService } from '../../services/util/toggle-new-post.servic
 })
 export class FeedComponent implements OnInit {
 
-  private postList:Post[] = [];
-  private maxposts: number;
-  private currentUser: User;
-  private showCommentEntry: Boolean;
+  postList:Post[] = [];
+  maxposts: number;
+  currentUser: User;
+  showCommentEntry: Boolean;
 
-  private unsubmittedContent: string;
+  unsubmittedContent: string;
 
   constructor(private posts:PostsService,private toggleService:ToggleNewPostService) {} //, private userComp:ProfileComponent) { }
 

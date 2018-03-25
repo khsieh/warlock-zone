@@ -20,4 +20,7 @@ export class RegisterComponent implements OnInit {
     ngOnInit() {
     }
 
+    submit():void{
+        console.log("submitting new user info");
+    }
 }

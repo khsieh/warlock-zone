@@ -2,11 +2,11 @@ import { User } from "./user";
 
 export class Post {
     
-    private postID:number;
-    private author:User;
-    private content:string;
-    private likes:number;
-    private picture: Blob; //blob? s3?
+    postID:number;
+    author:User;
+    content:string;
+    likes:number;
+    picture: Blob; //blob? s3?
 
     constructor() {}
     
